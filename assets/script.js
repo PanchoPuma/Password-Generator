@@ -81,11 +81,8 @@ var generatePassword = function() {
 
 // Password Lenght 
 var validLenght = function (lenghtofPassword) {
-  if (parseInt(lenghtofPassword) >= 129) {
-    window.alert("Password must be less than 129 characters.");
-    return false;
-  } else if (parseInt(lenghtofPassword) <= 7) {
-    window.alert("Password length must be at least 8 characters.");
+  if (parseInt(lenghtofPassword) >= 129 || parseInt(lenghtofPassword) <= 7 ) {
+    window.alert("Password must be between 8 and 128 characters.");
     return false;
    } else if (isNaN(lenghtofPassword)) {
     window.alert("Please enter a number!");
