@@ -25,42 +25,44 @@ var generatedpassword = [];
     if (passwordLenght) {
       console.log (passwordLenght) 
 
-    // Ask if the user wants special Characters
-    var specialCh = window.confirm("Do you want special characters in your password?");
-    if (specialCh){
-      generatedpassword = generatedpassword.concat(specialCharacters)
-    }
-    
+      // Ask if the user wants special Characters
+      var specialCh = window.confirm("Do you want special characters in your password?");
+      if (specialCh){
+        generatedpassword = generatedpassword.concat(specialCharacters)
+      }
+      
+      // Ask if the user wants numbers
+      var numb = window.confirm("Do you want numbers in your password?");
+      if (numb){
+        generatedpassword = generatedpassword.concat(numbers)
+      }
 
-    // Ask if the user wants numbers
-    var numb = window.confirm("Do you want numbers in your password?");
-    if (numb){
-      generatedpassword = generatedpassword.concat(numbers)
-    }
+      // Ask if the user wants upper case letters 
+      var upperL = window.confirm("Do you want upper case letters in your password?");
+      if (upperL){
+        generatedpassword = generatedpassword.concat(upperCaseLetters)
+      }
 
-    // Ask if the user wants upper case letters 
-    var upperL = window.confirm("Do you want upper case letters in your password?");
-    if (upperL){
-      generatedpassword = generatedpassword.concat(upperCaseLetters)
-    }
+      // Ask if the user wants lower case letters 
+      var lowerL = window.confirm("Do you want lower case letters in your password?");
+      if (lowerL){
+        generatedpassword = generatedpassword.concat(lowerCaseLetters)
+      }
 
-    // Ask if the user wants lower case letters 
-    var lowerL = window.confirm("Do you want lower case letters in your password?");
-    if (lowerL){
-      generatedpassword = generatedpassword.concat(lowerCaseLetters)
-    }
-    console.log (generatedpassword)
-
-
+      if (specialCh === false && numb === false && upperL === false && lowerL === false) {
+        window.alert("You must choose at least ONE parameter for your password!")
+        return generatePassword ();
+      }
+      console.log (generatedpassword)
+      
     } else {
       console.log (passwordLenght) 
-      return generatePassword ()
+      return generatePassword ();
     }
 
   
   //return completepassword.join ("")
-
-
+ 
 };
 
 
@@ -126,8 +128,4 @@ var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
 
