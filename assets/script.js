@@ -24,21 +24,20 @@ var generatePassword = function() {
       console.log (passwordLenght) 
 
     // Ask if the user wants special Characters
-    var specialCharacters = window.confirm("Do you want special characters in your password?");
-    var characterConfirmation = uniqueCharacters (specialCharacters)
-    console.log (characterConfirmation) 
+    var specialCh = window.confirm("Do you want special characters in your password?");
+    var characterConfirmation = generateUniqueCharacters (specialCh)
 
     // Ask if the user wants numbers
-    //var includeNumbers = window.confirm("Do you want numbers in your password?");
-    //console.log (includeNumbers) 
+    var numb = window.confirm("Do you want numbers in your password?");
+    var numberConfirmation = generatenumbers (numb)
 
     // Ask if the user wants upper case letters 
-    //var upperCase = window.confirm("Do you want upper case letters in your password?");
-    //console.log (upperCase) 
+    var upperL = window.confirm("Do you want upper case letters in your password?");
+    var upperLetterConfirmation = generateUpperLetters (upperL)
 
     // Ask if the user wants lower case letters 
-    //var LowerCase = window.confirm("Do you want lower case letters in your password?");
-    //console.log (LowerCase) 
+    var lowerL = window.confirm("Do you want lower case letters in your password?");
+    var lowerLetterConfirmation = generateLowerLetters (lowerL) 
 
 
     } else {
@@ -69,9 +68,30 @@ var generatePassword = function() {
     return true;
   };
   // Special Characters 
-  var uniqueCharacters = function (specialCharacters) {
-    if (specialCharacters) {
+  var generateUniqueCharacters = function (specialCh) {
+    if (specialCh) {
       return completepassword.push ("@")
+    }
+  };
+
+   // Numbers  
+   var generatenumbers = function (numb) {
+    if (numb) {
+      return completepassword.push ("4")
+    }
+  };
+
+   // Upper Case  
+   var generateUpperLetters = function (upperL) {
+    if (upperL) {
+      return completepassword.push ("A")
+    }
+  };
+
+   // Lower Case  
+   var generateLowerLetters = function (lowerL) {
+    if (lowerL) {
+      return completepassword.push ("b")
     }
   };
 
