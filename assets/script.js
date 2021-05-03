@@ -25,8 +25,8 @@ var generatedpool = [];
       window.alert("Password length must be at least 8 characters.");
       return false;
      } else if (isNaN(lenghtofPassword)) {
-        window.alert("Please enter a number!");
-        return false;
+      window.alert("Please enter a number!");
+      return false;
     }
     return true;
   };
@@ -35,6 +35,9 @@ var generatedpool = [];
 // Main Function
 
 var generatePassword = function() {
+
+  generatedpool.splice(0,generatedpool.length)
+  finalPassword.splice(0,finalPassword.length)
 
   // Ask how many characters between 8 and 128
   var lenghtofPassword = window.prompt("How many characters do you want in your password?");
