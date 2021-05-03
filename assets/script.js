@@ -1,6 +1,11 @@
 // Assignment code here
 
-//List of Arays for each case 
+
+// General Functions
+
+var generatePassword = function() {
+
+  //List of Arays for each case 
 
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharacters = ["!", "#", "$", "%","&","(", ")", "*",
@@ -11,11 +16,8 @@ var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L",
                         "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
 var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
                         "p","q","r","s","t","u","v","w","x","y","z",];
-var completepassword = [""];
+var generatedpassword = [];
 
-// General Functions
-
-var generatePassword = function() {
 
   // Ask how many characters between 8 and 128
   var lenghtofPassword = window.prompt("How many characters do you want in your password?");
@@ -25,19 +27,29 @@ var generatePassword = function() {
 
     // Ask if the user wants special Characters
     var specialCh = window.confirm("Do you want special characters in your password?");
-    var characterConfirmation = generateUniqueCharacters (specialCh)
+    if (specialCh){
+      generatedpassword = generatedpassword.concat(specialCharacters)
+    }
+    
 
     // Ask if the user wants numbers
     var numb = window.confirm("Do you want numbers in your password?");
-    var numberConfirmation = generatenumbers (numb)
+    if (numb){
+      generatedpassword = generatedpassword.concat(numbers)
+    }
 
     // Ask if the user wants upper case letters 
     var upperL = window.confirm("Do you want upper case letters in your password?");
-    var upperLetterConfirmation = generateUpperLetters (upperL)
+    if (upperL){
+      generatedpassword = generatedpassword.concat(upperCaseLetters)
+    }
 
     // Ask if the user wants lower case letters 
     var lowerL = window.confirm("Do you want lower case letters in your password?");
-    var lowerLetterConfirmation = generateLowerLetters (lowerL) 
+    if (lowerL){
+      generatedpassword = generatedpassword.concat(lowerCaseLetters)
+    }
+    console.log (generatedpassword)
 
 
     } else {
@@ -46,10 +58,20 @@ var generatePassword = function() {
     }
 
   
-  return completepassword.join ("")
+  //return completepassword.join ("")
 
 
 };
+
+
+
+
+
+
+
+
+
+
 
 //Conditions 
 
@@ -70,34 +92,14 @@ var generatePassword = function() {
   // Special Characters 
   var generateUniqueCharacters = function (specialCh) {
     if (specialCh) {
-      return completepassword.push ("@")
+      //return completepassword.push ("@")
+      return true
+    } else {
+      return false
     }
   };
 
-   // Numbers  
-   var generatenumbers = function (numb) {
-    if (numb) {
-      return completepassword.push ("4")
-    }
-  };
-
-   // Upper Case  
-   var generateUpperLetters = function (upperL) {
-    if (upperL) {
-      return completepassword.push ("A")
-    }
-  };
-
-   // Lower Case  
-   var generateLowerLetters = function (lowerL) {
-    if (lowerL) {
-      return completepassword.push ("b")
-    }
-  };
-
- 
-
-  
+   
 
   // function in case all is false 
 
