@@ -12,8 +12,14 @@ var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L",
 var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
                         "p","q","r","s","t","u","v","w","x","y","z",];
 
+// Functions for every case 
 
-
+// Ask how many characters between 8 and 128
+// Ask if the user wants special Characters
+// Ask if the user wants numbers
+// Ask if the user wants upper case letters 
+// Ask if the user wants lower case letters 
+// function in case all is false 
 
 
 
