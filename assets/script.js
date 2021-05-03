@@ -1,23 +1,23 @@
 // Assignment code here
 
 
-// General Functions
-
-var generatePassword = function() {
-
-  //List of Arays for each case 
+//List of Arays for each case 
 
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharacters = ["!", "#", "$", "%","&","(", ")", "*",
-                        "+", ",", "-", ".", "/", ":", ";", "<", 
-                        ">", "=", "?", "@", "[", "/", "]", "^", 
-                        "_", "{", "}", "~", ]; // based on the OWASP list of special characters
+                          "+", ",", "-", ".", "/", ":", ";", "<", 
+                          ">", "=", "?", "@", "[", "/", "]", "^", 
+                          "_", "{", "}", "~",]; // based on the OWASP list of special characters
 var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L",
-                        "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
+                          "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
 var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
-                        "p","q","r","s","t","u","v","w","x","y","z",];
+                          "p","q","r","s","t","u","v","w","x","y","z",];
 var generatedpassword = [];
+var generatedpool = [];
 
+// General Functions
+
+var generatePassword = function() {
 
   // Ask how many characters between 8 and 128
   var lenghtofPassword = window.prompt("How many characters do you want in your password?");
@@ -54,7 +54,7 @@ var generatedpassword = [];
         return generatePassword ();
       }
       console.log (generatedpassword)
-      
+
     } else {
       console.log (passwordLenght) 
       return generatePassword ();
@@ -75,32 +75,23 @@ var generatedpassword = [];
 
 
 
-//Conditions 
+//General Conditions 
 
   // Password Lenght 
   var validLenght = function (lenghtofPassword) {
     if (isNaN(lenghtofPassword)) {
       window.lert("Please enter a valid number!");
       return false;
-    } else if (parseInt(lenghtofPassword) <= 7) {
-      window.alert("Password length must be at least 8 characters.");
-      return false;
     } else if (parseInt(lenghtofPassword) >= 129) {
       window.alert("Password must be less than 129 characters.");
+      return false;
+    } else if (parseInt(lenghtofPassword) <= 7) {
+      window.alert("Password length must be at least 8 characters.");
       return false;
     }
     return true;
   };
-  // Special Characters 
-  var generateUniqueCharacters = function (specialCh) {
-    if (specialCh) {
-      //return completepassword.push ("@")
-      return true
-    } else {
-      return false
-    }
-  };
-
+  
    
 
   // function in case all is false 
