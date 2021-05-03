@@ -12,7 +12,7 @@ var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L",
                           "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
 var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
                           "p","q","r","s","t","u","v","w","x","y","z",];
-var generatedpassword = [];
+var finalPassword = [];
 var generatedpool = [];
 
 //General Conditions 
@@ -73,26 +73,24 @@ var generatePassword = function() {
       }
       console.log (generatedpool)
 
-    
-    //randomness
-    var randomness = Math.floor(Math.random () * generatedpool.length);
-    console.log (randomness)
-
-  
+     
     // constructing new array based on parameters
     
     for (var i = 0; i < lenghtofPassword ; i++) {
-      
-      generatedpassword.push (generatedpassword[randomness]); 
+       //randomness
+      var randomness = Math.floor(Math.random () * generatedpool.length);
+      console.log (randomness) 
+      finalPassword.push (finalPassword[randomness]) 
     }  
+    console.log (finalPassword)
 
-    } else {
+    return finalPassword.join ("");
+
+  } else {
       console.log (passwordLenght) 
       return generatePassword ();
     }
-
-  
-  return generatedpassword.join ("")
+ 
  
 };
 
