@@ -1,8 +1,6 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 // Assignment code here
 
@@ -18,30 +16,18 @@ var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L",
 var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
                         "p","q","r","s","t","u","v","w","x","y","z",];
 
-// Functions for every case 
+// General Functions
 
 function generatePassword() {
 
 // Ask how many characters between 8 and 128
+var lenghtofPassword = window.prompt("How many characters do you want in your password?");
 
-var askNumberOfCharacters = function () {
-  var numberOfCharacters = window.prompt("How many characters do you want your password to contain?");
-  if (isNaN(numberOfCharacters)) {
-    window.alert("Please enter a valid number!");
-    return askNumberOfCharacters ()
-  } else {
-  console.log (numberOfCharacters)
-  }
-};
 
-// Ask if the user wants special Characters
-// Ask if the user wants numbers
-// Ask if the user wants upper case letters 
-// Ask if the user wants lower case letters 
+
 // function in case all is false 
 
 };
-
 
 // Write password to the #password input
 function writePassword() {
@@ -50,6 +36,12 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
 
 
