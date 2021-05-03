@@ -23,6 +23,17 @@ function generatePassword() {
 // Ask how many characters between 8 and 128
 var lenghtofPassword = window.prompt("How many characters do you want in your password?");
 
+// Ask if the user wants special Characters
+var specialCharacters = window.prompt("Do you want special characters in your password?");
+
+// Ask if the user wants numbers
+var includeNumbers = window.prompt("Do you want numbers in your password?");
+
+// Ask if the user wants upper case letters 
+var upperCase = window.prompt("Do you want upper case letters in your password?");
+
+// Ask if the user wants lower case letters 
+var LowerCase = window.prompt("Do you want lower case letters in your password?");
 
 
 // function in case all is false 
