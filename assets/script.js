@@ -73,30 +73,24 @@ var generatePassword = function() {
       console.log (generatedpool)
 
      
-    // constructing the final array based on parameters
+      // constructing the final array based on parameters
 
-    for (var i = 0; i < parseInt(lenghtofPassword) ; i++) {
-      //randomness
-      var randomness = Math.floor(Math.random () * generatedpool.length);
-      console.log (randomness) 
-      finalPassword.push (finalPassword[randomness]) 
-    }  
-    console.log (finalPassword)
+      for (var i = 0; i < parseInt(lenghtofPassword) ; i++) {
+        //randomness
+        var randomness = Math.floor(Math.random () * generatedpool.length);
+        console.log (randomness) 
+        finalPassword.push (generatedpool[randomness]) 
+      }  
+      console.log (finalPassword)
+      window.alert ("Your Password is Ready!")
 
-    return finalPassword.join (""); 
+      return finalPassword.join (""); 
 
   } else {
       console.log (passwordLenght) 
       return generatePassword ();
     }
- 
- 
 };
-
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
