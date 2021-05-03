@@ -21,23 +21,30 @@ var generatePassword = function() {
     var passwordLenght = validLenght (lenghtofPassword)
     if (passwordLenght) {
       console.log (passwordLenght) 
+
+    // Ask if the user wants special Characters
+    var specialCharacters = window.confirm("Do you want special characters in your password?");
+    console.log (specialCharacters) 
+
+    // Ask if the user wants numbers
+    var includeNumbers = window.confirm("Do you want numbers in your password?");
+    console.log (includeNumbers) 
+
+    // Ask if the user wants upper case letters 
+    var upperCase = window.confirm("Do you want upper case letters in your password?");
+    console.log (upperCase) 
+
+    // Ask if the user wants lower case letters 
+    var LowerCase = window.confirm("Do you want lower case letters in your password?");
+    console.log (LowerCase) 
+
+
     } else {
+      console.log (passwordLenght) 
       return generatePassword ()
     }
 
-
-  // Ask if the user wants special Characters
-  //var specialCharacters = window.prompt("Do you want special characters in your password?");
-
-  // Ask if the user wants numbers
-  //var includeNumbers = window.prompt("Do you want numbers in your password?");
-
-  // Ask if the user wants upper case letters 
-  //var upperCase = window.prompt("Do you want upper case letters in your password?");
-
-  // Ask if the user wants lower case letters 
-  // var LowerCase = window.prompt("Do you want lower case letters in your password?");
-
+  
 
   // function in case all is false 
 
@@ -47,13 +54,13 @@ var generatePassword = function() {
 
 var validLenght = function (lenghtofPassword) {
   if (isNaN(lenghtofPassword)) {
-    alert("Please enter a valid number!");
+    window.lert("Please enter a valid number!");
     return false;
   } else if (parseInt(lenghtofPassword) <= 7) {
-    alert("Password length must be at least 8 characters.");
+    window.alert("Password length must be at least 8 characters.");
     return false;
   } else if (parseInt(lenghtofPassword) >= 129) {
-    alert("Password must be less than 129 characters.");
+    window.alert("Password must be less than 129 characters.");
     return false;
   }
   return true;
