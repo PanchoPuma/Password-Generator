@@ -15,73 +15,9 @@ var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 var generatedpassword = [];
 var generatedpool = [];
 
-// General Functions
-
-var generatePassword = function() {
-
-  // Ask how many characters between 8 and 128
-  var lenghtofPassword = window.prompt("How many characters do you want in your password?");
-    var passwordLenght = validLenght (lenghtofPassword)
-    if (passwordLenght) {
-      console.log (passwordLenght) 
-
-      // Ask if the user wants special Characters
-      var specialCh = window.confirm("Do you want special characters in your password?");
-      if (specialCh){
-        generatedpassword = generatedpassword.concat(specialCharacters)
-      }
-      
-      // Ask if the user wants numbers
-      var numb = window.confirm("Do you want numbers in your password?");
-      if (numb){
-        generatedpassword = generatedpassword.concat(numbers)
-      }
-
-      // Ask if the user wants upper case letters 
-      var upperL = window.confirm("Do you want upper case letters in your password?");
-      if (upperL){
-        generatedpassword = generatedpassword.concat(upperCaseLetters)
-      }
-
-      // Ask if the user wants lower case letters 
-      var lowerL = window.confirm("Do you want lower case letters in your password?");
-      if (lowerL){
-        generatedpassword = generatedpassword.concat(lowerCaseLetters)
-      }
-
-      if (specialCh === false && numb === false && upperL === false && lowerL === false) {
-        window.alert("You must choose at least ONE parameter for your password!")
-        return generatePassword ();
-      }
-      console.log (generatedpassword)
-
-      var randomness = Math.floor(Math.random () * generatedpassword.length);
-      console.log (randomness)
-
-
-    } else {
-      console.log (passwordLenght) 
-      return generatePassword ();
-    }
-
-  
-  //return completepassword.join ("")
- 
-};
-
-
-
-
-
-
-
-
-
-
-
 //General Conditions 
 
-  // Password Lenght 
+// Password Lenght 
   var validLenght = function (lenghtofPassword) {
     if (isNaN(lenghtofPassword)) {
       window.lert("Please enter a valid number!");
@@ -95,13 +31,70 @@ var generatePassword = function() {
     }
     return true;
   };
+
+
+// Main Function
+
+var generatePassword = function() {
+
+  // Ask how many characters between 8 and 128
+  var lenghtofPassword = window.prompt("How many characters do you want in your password?");
+    var passwordLenght = validLenght (lenghtofPassword)
+    if (passwordLenght) {
+      console.log (passwordLenght) 
+
+      // Ask if the user wants special Characters
+      var specialCh = window.confirm("Do you want special characters in your password?");
+      if (specialCh){
+        generatedpool = generatedpool.concat(specialCharacters)
+      }
+      
+      // Ask if the user wants numbers
+      var numb = window.confirm("Do you want numbers in your password?");
+      if (numb){
+        generatedpool = generatedpool.concat(numbers)
+      }
+
+      // Ask if the user wants upper case letters 
+      var upperL = window.confirm("Do you want upper case letters in your password?");
+      if (upperL){
+        generatedpool = generatedpool.concat(upperCaseLetters)
+      }
+
+      // Ask if the user wants lower case letters 
+      var lowerL = window.confirm("Do you want lower case letters in your password?");
+      if (lowerL){
+        generatedpool = generatedpool.concat(lowerCaseLetters)
+      }
+
+      if (specialCh === false && numb === false && upperL === false && lowerL === false) {
+        window.alert("You must choose at least ONE parameter for your password!")
+        return generatePassword ();
+      }
+      console.log (generatedpool)
+
+    
+    //randomness
+    var randomness = Math.floor(Math.random () * generatedpool.length);
+    console.log (randomness)
+
+  
+    // constructing new array based on parameters
+    
+    for (var i = 0; i < lenghtofPassword ; i++) {
+      
+      generatedpassword.push (generatedpassword[randomness]); 
+    }  
+
+    } else {
+      console.log (passwordLenght) 
+      return generatePassword ();
+    }
+
+  
+  return generatedpassword.join ("")
  
-
-  // function in case all is false 
-
-
-
-
+};
 
 
 
