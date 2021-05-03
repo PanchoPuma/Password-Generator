@@ -11,6 +11,7 @@ var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L",
                         "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
 var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
                         "p","q","r","s","t","u","v","w","x","y","z",];
+var completepassword = [""];
 
 // General Functions
 
@@ -24,19 +25,20 @@ var generatePassword = function() {
 
     // Ask if the user wants special Characters
     var specialCharacters = window.confirm("Do you want special characters in your password?");
-    console.log (specialCharacters) 
+    var characterConfirmation = uniqueCharacters (specialCharacters)
+    console.log (characterConfirmation) 
 
     // Ask if the user wants numbers
-    var includeNumbers = window.confirm("Do you want numbers in your password?");
-    console.log (includeNumbers) 
+    //var includeNumbers = window.confirm("Do you want numbers in your password?");
+    //console.log (includeNumbers) 
 
     // Ask if the user wants upper case letters 
-    var upperCase = window.confirm("Do you want upper case letters in your password?");
-    console.log (upperCase) 
+    //var upperCase = window.confirm("Do you want upper case letters in your password?");
+    //console.log (upperCase) 
 
     // Ask if the user wants lower case letters 
-    var LowerCase = window.confirm("Do you want lower case letters in your password?");
-    console.log (LowerCase) 
+    //var LowerCase = window.confirm("Do you want lower case letters in your password?");
+    //console.log (LowerCase) 
 
 
     } else {
@@ -45,26 +47,48 @@ var generatePassword = function() {
     }
 
   
+  return completepassword.join ("")
 
-  // function in case all is false 
 
 };
 
 //Conditions 
 
-var validLenght = function (lenghtofPassword) {
-  if (isNaN(lenghtofPassword)) {
-    window.lert("Please enter a valid number!");
-    return false;
-  } else if (parseInt(lenghtofPassword) <= 7) {
-    window.alert("Password length must be at least 8 characters.");
-    return false;
-  } else if (parseInt(lenghtofPassword) >= 129) {
-    window.alert("Password must be less than 129 characters.");
-    return false;
-  }
-  return true;
-}
+  // Password Lenght 
+  var validLenght = function (lenghtofPassword) {
+    if (isNaN(lenghtofPassword)) {
+      window.lert("Please enter a valid number!");
+      return false;
+    } else if (parseInt(lenghtofPassword) <= 7) {
+      window.alert("Password length must be at least 8 characters.");
+      return false;
+    } else if (parseInt(lenghtofPassword) >= 129) {
+      window.alert("Password must be less than 129 characters.");
+      return false;
+    }
+    return true;
+  };
+  // Special Characters 
+  var uniqueCharacters = function (specialCharacters) {
+    if (specialCharacters) {
+      return completepassword.push ("@")
+    }
+  };
+
+ 
+
+  
+
+  // function in case all is false 
+
+
+
+
+
+
+
+
+
 
 // Write password to the #password input
 function writePassword() {
