@@ -1,3 +1,9 @@
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 // Assignment code here
 
 //List of Arays for each case 
@@ -14,18 +20,28 @@ var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 
 // Functions for every case 
 
+function generatePassword() {
+
 // Ask how many characters between 8 and 128
+
+var askNumberOfCharacters = function () {
+  var numberOfCharacters = window.prompt("How many characters do you want your password to contain?");
+  if (isNaN(numberOfCharacters)) {
+    window.alert("Please enter a valid number!");
+    return askNumberOfCharacters ()
+  } else {
+  console.log (numberOfCharacters)
+  }
+};
+
 // Ask if the user wants special Characters
 // Ask if the user wants numbers
 // Ask if the user wants upper case letters 
 // Ask if the user wants lower case letters 
 // function in case all is false 
 
+};
 
-
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -36,5 +52,4 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
