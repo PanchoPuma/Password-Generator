@@ -55,6 +55,10 @@ var generatePassword = function() {
       }
       console.log (generatedpassword)
 
+      var randomness = Math.floor(Math.random () * generatedpassword.length);
+      console.log (randomness)
+
+
     } else {
       console.log (passwordLenght) 
       return generatePassword ();
@@ -91,8 +95,7 @@ var generatePassword = function() {
     }
     return true;
   };
-  
-   
+ 
 
   // function in case all is false 
 
