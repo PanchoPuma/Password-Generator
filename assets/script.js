@@ -1,7 +1,6 @@
 // Assignment code here
 
-
-//List of Arays for each case 
+//List of Arays 
 
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharacters = ["!", "#", "$", "%","&","(", ")", "*",
@@ -19,15 +18,15 @@ var generatedpool = [];
 
 // Password Lenght 
   var validLenght = function (lenghtofPassword) {
-    if (isNaN(lenghtofPassword)) {
-      window.lert("Please enter a valid number!");
-      return false;
-    } else if (parseInt(lenghtofPassword) >= 129) {
+    if (parseInt(lenghtofPassword) >= 129) {
       window.alert("Password must be less than 129 characters.");
       return false;
     } else if (parseInt(lenghtofPassword) <= 7) {
       window.alert("Password length must be at least 8 characters.");
       return false;
+     } else if (isNaN(lenghtofPassword)) {
+        window.alert("Please enter a number!");
+        return false;
     }
     return true;
   };
@@ -74,17 +73,17 @@ var generatePassword = function() {
       console.log (generatedpool)
 
      
-    // constructing new array based on parameters
-    
-    for (var i = 0; i < lenghtofPassword ; i++) {
-       //randomness
+    // constructing the final array based on parameters
+
+    for (var i = 0; i < parseInt(lenghtofPassword) ; i++) {
+      //randomness
       var randomness = Math.floor(Math.random () * generatedpool.length);
       console.log (randomness) 
       finalPassword.push (finalPassword[randomness]) 
     }  
     console.log (finalPassword)
 
-    return finalPassword.join ("");
+    return finalPassword.join (""); 
 
   } else {
       console.log (passwordLenght) 
