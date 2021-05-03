@@ -1,7 +1,3 @@
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-
 // Assignment code here
 
 //List of Arays for each case 
@@ -18,27 +14,50 @@ var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 
 // General Functions
 
-function generatePassword() {
+var generatePassword = function() {
 
-// Ask how many characters between 8 and 128
-var lenghtofPassword = window.prompt("How many characters do you want in your password?");
-
-// Ask if the user wants special Characters
-var specialCharacters = window.prompt("Do you want special characters in your password?");
-
-// Ask if the user wants numbers
-var includeNumbers = window.prompt("Do you want numbers in your password?");
-
-// Ask if the user wants upper case letters 
-var upperCase = window.prompt("Do you want upper case letters in your password?");
-
-// Ask if the user wants lower case letters 
-var LowerCase = window.prompt("Do you want lower case letters in your password?");
+  // Ask how many characters between 8 and 128
+  var lenghtofPassword = window.prompt("How many characters do you want in your password?");
+    var passwordLenght = validLenght (lenghtofPassword)
+    if (passwordLenght) {
+      console.log (passwordLenght) 
+    } else {
+      return generatePassword ()
+    }
 
 
-// function in case all is false 
+  // Ask if the user wants special Characters
+  //var specialCharacters = window.prompt("Do you want special characters in your password?");
+
+  // Ask if the user wants numbers
+  //var includeNumbers = window.prompt("Do you want numbers in your password?");
+
+  // Ask if the user wants upper case letters 
+  //var upperCase = window.prompt("Do you want upper case letters in your password?");
+
+  // Ask if the user wants lower case letters 
+  // var LowerCase = window.prompt("Do you want lower case letters in your password?");
+
+
+  // function in case all is false 
 
 };
+
+//Conditions 
+
+var validLenght = function (lenghtofPassword) {
+  if (isNaN(lenghtofPassword)) {
+    alert("Please enter a valid number!");
+    return false;
+  } else if (parseInt(lenghtofPassword) <= 7) {
+    alert("Password length must be at least 8 characters.");
+    return false;
+  } else if (parseInt(lenghtofPassword) >= 129) {
+    alert("Password must be less than 129 characters.");
+    return false;
+  }
+  return true;
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -48,6 +67,9 @@ function writePassword() {
   passwordText.value = password;
 
 };
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
